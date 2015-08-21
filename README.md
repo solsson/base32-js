@@ -1,3 +1,6 @@
+This fork swiches to alphabet https://en.wikipedia.org/wiki/Base32#Crockford.27s_Base32.
+Note that there's also https://www.npmjs.com/package/base32.js which supports multiple variants including crockford, but lacks the repair feature.
+
 # Base 32 encoding/decoding for JavaScript [![build status](https://secure.travis-ci.org/agnoster/base32-js.png?branch=master)](http://travis-ci.org/agnoster/base32-js)
 
 Base 32 is between hexadecimal notation and Base 64 encoding. It's intended to be a **human-friendly** -- you don't have to worry about punctuation, capitalization, or letters/numbers that are easy to confuse, making it easier to transmit in handwriting or over the phone.
