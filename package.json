@@ -1,12 +1,12 @@
 {
-  "name": "base32",
+  "name": "base32-crockford",
   "description": "Base32 encoding and decoding",
   "version": "0.0.6",
   "author": "Isaac Wolkerstorfer <agnoster@gmail.com> (http://agnoster.net/)",
   "homepage": "https://github.com/agnoster/base32-js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/agnoster/base32-js.git"
+    "url": "git://github.com/solsson/base32-js.git"
   },
   "main": "./lib/base32",
   "bin": "./bin/base32.js",
