@@ -13,7 +13,7 @@ suite = suite.addBatch
       base32.encode teststring
 
     'it has the right value': (topic) ->
-      assert.equal topic, 'dhqqetbjcdgq6t90an850haj8d0n6h9064t36d1n6rvj08a04cj2aqh658'
+      assert.equal topic, 'dhqqesbjcdgq6s90an850haj8d0n6h9064s36d1n6rvj08a04cj2aqh658'
 
     'it decodes to the right value': (topic) ->
       assert.equal base32.decode(topic), teststring
@@ -24,7 +24,7 @@ suite = suite.addBatch
       original: sha1, encoded: base32.encode sha1
 
     'it has the right value': (topic) ->
-      assert.equal topic.encoded, '1wwn60g9bv8n5g8n72udmk7yqm80dvtu'
+      assert.equal topic.encoded, '1wwn60g9bv8n5g8n72tdmk7yqm80dvst'
 
     'it has 32 characters': (topic) ->
       assert.equal topic.encoded.length, 32
@@ -37,7 +37,7 @@ suite = suite.addBatch
       hash = base32.sha1(teststring)
 
     'it produces the same value': (topic) ->
-      assert.equal topic, '1wwn60g9bv8n5g8n72udmk7yqm80dvtu'
+      assert.equal topic, '1wwn60g9bv8n5g8n72tdmk7yqm80dvst'
 
   'When streaming a string to encode':
     topic: ->
@@ -48,11 +48,11 @@ suite = suite.addBatch
       output
 
     'it should produce the correct value': (topic) ->
-      assert.equal topic, 'dhqqetbjcdgq6t90an850haj8d0n6h9064t36d1n6rvj08a04cj2aqh658'
+      assert.equal topic, 'dhqqesbjcdgq6s90an850haj8d0n6h9064s36d1n6rvj08a04cj2aqh658'
 
   'When decoding a string with common errors':
     topic: ->
-      base32.decode 'dHqqetbjcdgq6t9Oan850hAj8d0n6h9O64t36dLn6rvjO8a04cj2aqh6S8'
+      base32.decode 'dHqqesbjcdgq6s9Oan850hAj8d0n6h9O64s36dLn6rvjO8a04cj2aqh658'
 
     'it should be the same as the original': (topic) ->
       assert.equal topic, teststring
@@ -64,13 +64,13 @@ suite = suite.addBatch
     'it should calculate the right digest': (hash) ->
       hash.update(teststring.substr(0,10))
       hash.update(teststring.substr(10))
-      assert.equal hash.digest(), '1wwn60g9bv8n5g8n72udmk7yqm80dvtu'
+      assert.equal hash.digest(), '1wwn60g9bv8n5g8n72tdmk7yqm80dvst'
 
   'When we hash a file':
     topic: ->
       base32.sha1.file('LICENSE', this.callback)
 
     'it should give the right value': (hash) ->
-      assert.equal hash, 'za118kbdknm728mwx9r5g9rtv3mw2y4d'
+      assert.equal hash, 'za118kbdknm728mwx9r5g9rsv3mw2y4d'
 
 suite.run()
